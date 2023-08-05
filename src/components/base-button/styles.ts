@@ -1,4 +1,6 @@
-.button {
+import styled from 'styled-components';
+
+const Button = styled.button`
   border: none;
   padding: 0;
   margin: 16px 0;
@@ -13,4 +15,6 @@
   border-radius: 37px;
   padding: 10px 20px;
   font-family: 'Roboto', sans-serif;
-}
+`;
+
+export { Button };

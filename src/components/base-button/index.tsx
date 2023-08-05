@@ -1,15 +1,15 @@
-import './styles.css';
+import { Button } from './styles';
 
 interface ButtonProps {
   text: string;
 }
 
-const Button = (props: ButtonProps) => {
+const BaseButton = (props: ButtonProps) => {
   return (
-    <button className='button'>
+    <Button>
       {props.text}
-    </button>
+    </Button>
   );
 };
 
-export default Button;
+export default BaseButton;
