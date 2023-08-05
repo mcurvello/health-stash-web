@@ -44,4 +44,14 @@ const Input = styled.input.attrs((props) => ({
   }
 `;
 
-export { Input };
+const LabelTags = styled.span`
+  display: inline-block;
+  margin-left: 14px;
+  font-size: 16px;
+  color: var(--color-white);
+  font-weight: 400;
+  font-family: 'Roboto', sans-serif;
+  cursor: pointer;
+`
+
+export { Input, LabelTags };

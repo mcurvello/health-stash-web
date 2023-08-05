@@ -1,10 +1,12 @@
-import { Input } from './styles'
+import { Input, LabelTags } from './styles'
 
 interface BaseInputTextProps {
   placeholder: string;
   width?: string;
   type?: string;
   full?: boolean;
+  addTag?: boolean;
+  labelTags?: string;
 }
 
 const BaseInputText = (props: BaseInputTextProps) => {
@@ -17,6 +19,7 @@ const BaseInputText = (props: BaseInputTextProps) => {
         width={props.width}
         type={props.type}
       />
+      {props.labelTags && <LabelTags>+ {props.labelTags}</LabelTags>}
     </div>
   );
 };
