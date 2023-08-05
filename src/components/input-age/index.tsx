@@ -1,10 +1,14 @@
 import BaseInput from "@/components/base-input";
 
-const InputAge = () => {
+interface InputAgeProps {
+  width?: string;
+}
+
+const InputAge = (props: InputAgeProps) => {
   return (
     <div>
       <BaseInput
-        width="256px"
+        width={props.width || "256px"}
         placeholder="Idade"
       />
     </div>

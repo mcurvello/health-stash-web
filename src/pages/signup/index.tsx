@@ -1,16 +1,21 @@
+import { Route, Routes } from 'react-router-dom';
+import AddDoctor from '@/components/add-doctor';
+import AddPatient from '@/components/add-patient';
+import ChooseOptionSignup from '@/components/choose-option-signup';
+import { Container } from '@/components/styles';
 import Logo from '@/components/logo';
-import InputName from '@/components/input-name';
-import InputAge from '@/components/input-age';
 
 const signup = () => {
   return (
     <>
-      <Logo />
-      <h2 className='login-title'>Cadastro Médico</h2>
-      <InputName />
-      <div className="container">
-        <InputAge />
-      </div>
+      <Container align="center">
+        <Logo />
+      </Container>
+      <ChooseOptionSignup />
+      <Routes>
+        <Route path="/" element={<AddDoctor />} />
+        <Route path="/patient" element={<AddPatient />} />
+      </Routes>
     </>
   );
 };

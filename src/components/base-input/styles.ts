@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import UserIcon from '@/assets/img/user-icon.svg';
 import PasswordIcon from '@/assets/img/password-icon.svg';
+import ArrowIcon from '@/assets/img/arrow-icon.svg'
 
 const Input = styled.input.attrs((props) => ({
     type: props.type || 'text',
@@ -20,6 +21,7 @@ const Input = styled.input.attrs((props) => ({
   color: var(--color-white);
   margin: 10px 0;
   cursor: pointer;
+  font-family: 'Roboto', sans-serif;
 
   &[placeholder='CRM/CPF'] {
     background-image: url(${UserIcon});
@@ -27,6 +29,13 @@ const Input = styled.input.attrs((props) => ({
 
   &[type='password'] {
     background-image: url(${PasswordIcon});
+  }
+
+  &[placeholder='Gênero'],
+  &[placeholder='Especialidade'],
+  &[placeholder='Convênio'] {
+    background-image: url(${ArrowIcon});
+    background-position: center right 12px;
   }
 
   &::placeholder {
