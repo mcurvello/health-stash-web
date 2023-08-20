@@ -11,4 +11,10 @@ const MedicineList = styled.div`
   margin-top: 20px;
 `;
 
-export { MedicineList, Container }
+const ContainerButtons = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+`
+
+export { MedicineList, Container, ContainerButtons }

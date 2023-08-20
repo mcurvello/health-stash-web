@@ -17,4 +17,8 @@ const Button = styled.button`
   font-family: 'Roboto', sans-serif;
 `;
 
-export { Button };
+const Text = styled.span`
+  margin-left: 8px;
+`;
+
+export { Button, Text };
