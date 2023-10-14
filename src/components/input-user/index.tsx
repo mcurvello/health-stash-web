@@ -5,7 +5,7 @@ const InputUser = () => {
     <div>
       <BaseInput
         width="480px"
-        placeholder="CRM/CPF"
+        placeholder="E-mail"
       />
     </div>
   );

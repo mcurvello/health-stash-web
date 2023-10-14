@@ -3,6 +3,7 @@ import Logo from '@/components/logo';
 import InputUser from '@/components/input-user';
 import InputPassword from '@/components/input-password';
 import BaseButton from '@/components/base-button';
+import { CreateAccountText, SignUpText, ContainerSignUpText } from './styles';
 
 function Login() {
 
@@ -12,14 +13,19 @@ function Login() {
       <form>
         <InputUser />
         <InputPassword />
-        <BaseButton text='Login' />
+        <BaseButton text='Entrar' />
       </form>
-      <p className='create-account-text'>
+      <CreateAccountText>
         Não possui conta?
-        <a href={'/signup'}>
-          Cadastrar agora
-        </a>
-      </p>
+        <ContainerSignUpText>
+          <SignUpText>
+            Cadastro de paciente
+          </SignUpText>
+          <SignUpText>
+            Cadastro de médico
+          </SignUpText>
+        </ContainerSignUpText>
+      </CreateAccountText>
     </>
   )
 }

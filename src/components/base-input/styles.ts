@@ -23,7 +23,7 @@ const Input = styled.input.attrs((props) => ({
   cursor: pointer;
   font-family: 'Roboto', sans-serif;
 
-  &[placeholder='CRM/CPF'] {
+  &[placeholder='E-mail'] {
     background-image: url(${UserIcon});
   }
 
