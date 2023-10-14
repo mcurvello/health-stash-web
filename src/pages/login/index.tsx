@@ -9,7 +9,6 @@ function Login() {
   return (
     <>
       <Logo />
-      <h2 className='login-title'>Login</h2>
       <form>
         <InputUser />
         <InputPassword />
