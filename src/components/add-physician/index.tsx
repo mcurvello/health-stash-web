@@ -1,7 +1,7 @@
 import { ChangeEvent, useState } from 'react';
 import BaseButton from '@/components/base-button';
 import InputName from '@/components/input-name';
-import InputAge from '@/components/input-age';
+import InputAge from '@/components/input-birthdate';
 import InputGender from '@/components/input-gender';
 import InputSpeciality from '@/components/input-speciality';
 import InputCommorbidities from '@/components/input-commorbities';

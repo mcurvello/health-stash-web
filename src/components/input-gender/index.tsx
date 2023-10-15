@@ -1,19 +1,11 @@
 import BaseInput from '@/components/base-input';
 
 interface InputGenderProps {
-  width?: string;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-const InputGender = (props: InputGenderProps) => {
+const InputGender = (props: InputGenderProps) => 
+  <BaseInput placeholder='Gênero' onChange={props.onChange} />
 
-  // const genders = ['Masculino', 'Feminino', 'Outro'];
-
-  return (
-    <BaseInput
-      placeholder='Gênero'
-      width={props.width}
-    />
-  )
-}
 
 export default InputGender;

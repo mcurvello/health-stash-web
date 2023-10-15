@@ -9,6 +9,7 @@ interface ContainerProps {
 const Container = styled.div<ContainerProps>`
   margin-top: ${({ top }) => (top ? top : '0' )};
   display: flex;
+  gap: 16px;
   justify-content: ${({ align }) => align || 'space-between'};
   
   ${props =>

@@ -3,7 +3,7 @@ import { User } from 'firebase/auth';
 
 interface AuthContextType {
   user: User | null;
-  createUser: (email: string, password: string) => void;
+  createUser: (email: string, password: string) => Promise<void>;
   logout: () => void;
   login: (email: string, password: string) => Promise<void>;
 }

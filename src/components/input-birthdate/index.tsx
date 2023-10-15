@@ -1,11 +1,11 @@
 import BaseInput from "@/components/base-input";
 
-interface InputAgeProps {
+interface InputBirthdateProps {
   width?: string;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-const InputAge = (props: InputAgeProps) => {
+const InputBirthdate = (props: InputBirthdateProps) => {
   return (
     <BaseInput
       width={props.width || "256px"}
@@ -15,4 +15,4 @@ const InputAge = (props: InputAgeProps) => {
   );
 };
 
-export default InputAge;
+export default InputBirthdate;
