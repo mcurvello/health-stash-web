@@ -1,13 +1,10 @@
 import BaseInput from '@/components/base-input';
 
-const InputCommorbidities = () => {
-  return (
-    <BaseInput
-      placeholder='Comorbidades'
-      full={true}
-      addTag={true}
-    />
-  )
+interface InputCommorbiditiesProps {
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
+
+const InputCommorbidities = (props: InputCommorbiditiesProps) => 
+  <BaseInput placeholder='Comorbidades' onChange={props.onChange} />;
 
 export default InputCommorbidities;

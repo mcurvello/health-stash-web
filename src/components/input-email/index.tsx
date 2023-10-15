@@ -1,5 +1,10 @@
 import BaseInput from "@/components/base-input";
 
-const InputEmail = () => <BaseInput placeholder="E-mail" full={true} />;
+interface InputEmailProps {
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+}
+
+const InputEmail = (props: InputEmailProps) =>
+  <BaseInput placeholder="E-mail" onChange={props.onChange} />;
 
 export default InputEmail;

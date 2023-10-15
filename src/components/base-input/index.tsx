@@ -4,19 +4,16 @@ interface BaseInputTextProps {
   placeholder: string;
   width?: string;
   type?: string;
-  full?: boolean;
-  addTag?: boolean;
-  labelTags?: string;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const BaseInputText = (props: BaseInputTextProps) => {
-  // const isFull = props.full ? '100%' : 'auto';
-  
   return (
     <Input
       placeholder={props.placeholder}
       width={props.width}
       type={props.type}
+      onChange={props.onChange}
     />
   );
 };

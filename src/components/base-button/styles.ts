@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 
-const Button = styled.button`
+interface ButtonProps {
+  onClick?: (event: Event) => void;
+}
+
+const Button = styled.button<ButtonProps>`
   border: none;
   padding: 0;
   margin: 16px 0;

@@ -5,11 +5,12 @@ import { faHome, faComments } from '@fortawesome/free-solid-svg-icons';
 interface ButtonProps {
   text: string;
   icon?: string;
+  onClick?: (event: Event) => void;
 }
 
 const BaseButton = (props: ButtonProps) => {
   return (
-    <Button>
+    <Button onClick={props.onClick}>
       { props.icon === 'home' && <FontAwesomeIcon icon={faHome} /> }
       { props.icon === 'comments' && <FontAwesomeIcon icon={faComments} /> }
       <Text>

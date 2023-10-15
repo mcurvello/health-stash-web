@@ -4,8 +4,6 @@ const InputAllergies = () => {
   return (
     <BaseInput
       placeholder='Alergias'
-      full={true}
-      addTag={true}
     />
   )
 }
