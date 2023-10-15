@@ -10,6 +10,8 @@ import InputPassword from '@/components/input-password';
 import { Container } from '@/components/styles';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '@/config/firebase';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const AddPhysician = () => {
   const [name, setName] = useState('');
@@ -46,8 +48,27 @@ const AddPhysician = () => {
   async function handleSignUp() {
     try {
       await createUserWithEmailAndPassword(auth, email, password)
-    } catch (error) {
-      console.log(error)
+      toast.success('Médico cadastrado com sucesso!', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'colored'
+      });
+    } catch {
+      toast.error('Erro ao cadastrar médico!', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'colored'
+      });
     }
   }
 
@@ -65,6 +86,7 @@ const AddPhysician = () => {
       <Container align="center" top="30px">
         <BaseButton text='Cadastrar' onClick={handleSignUp} />
       </Container>
+      <ToastContainer />
     </>
   );
 };
