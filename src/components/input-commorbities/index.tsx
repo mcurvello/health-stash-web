@@ -6,7 +6,6 @@ const InputCommorbidities = () => {
       placeholder='Comorbidades'
       full={true}
       addTag={true}
-      labelTags='Comorbidades'
     />
   )
 }

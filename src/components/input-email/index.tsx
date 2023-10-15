@@ -4,7 +4,6 @@ const InputUser = () => {
   return (
     <div>
       <BaseInput
-        width="480px"
         placeholder="E-mail"
       />
     </div>

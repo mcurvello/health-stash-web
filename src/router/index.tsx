@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Login from "@/pages/login";
-import Signup from "@/pages/signup";
+import AddPhysicianPage from "@/pages/add-physician";
+import AddPatientPage from "@/pages/add-patient";
 import MedicineList from "@/pages/medicine-list";
 import MedicineInfoPage from "@/pages/medicine-info";
 
@@ -10,8 +11,12 @@ const routes = [
     element: <Login />,
   },
   {
-    path: '/signup/*',
-    element: <Signup />,
+    path: '/add-physician/*',
+    element: <AddPhysicianPage />,
+  },
+  {
+    path: '/add-patient/*',
+    element: <AddPatientPage />,
   },
   {
     path: "/medicine-list/*",

@@ -6,7 +6,6 @@ const InputAllergies = () => {
       placeholder='Alergias'
       full={true}
       addTag={true}
-      labelTags='Adicionar alergias'
     />
   )
 }

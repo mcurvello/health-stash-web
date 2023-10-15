@@ -1,6 +1,6 @@
 import './styles.css';
 import Logo from '@/components/logo';
-import InputUser from '@/components/input-user';
+import InputUser from '@/components/input-email';
 import InputPassword from '@/components/input-password';
 import BaseButton from '@/components/base-button';
 import { CreateAccountText, SignUpText, ContainerSignUpText } from './styles';
@@ -18,10 +18,10 @@ function Login() {
       <CreateAccountText>
         Não possui conta?
         <ContainerSignUpText>
-          <SignUpText>
+          <SignUpText to="add-patient">
             Cadastro de paciente
           </SignUpText>
-          <SignUpText>
+          <SignUpText to="add-physician">
             Cadastro de médico
           </SignUpText>
         </ContainerSignUpText>

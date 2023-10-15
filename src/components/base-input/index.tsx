@@ -1,4 +1,4 @@
-import { Input, LabelTags } from './styles'
+import { Input } from './styles'
 
 interface BaseInputTextProps {
   placeholder: string;
@@ -19,7 +19,6 @@ const BaseInputText = (props: BaseInputTextProps) => {
         width={props.width}
         type={props.type}
       />
-      {props.labelTags && <LabelTags>+ {props.labelTags}</LabelTags>}
     </div>
   );
 };

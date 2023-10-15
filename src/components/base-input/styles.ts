@@ -1,7 +1,4 @@
 import styled from 'styled-components';
-import UserIcon from '@/assets/img/user-icon.svg';
-import PasswordIcon from '@/assets/img/password-icon.svg';
-import ArrowIcon from '@/assets/img/arrow-icon.svg'
 
 const Input = styled.input.attrs((props) => ({
     type: props.type || 'text',
@@ -23,35 +20,14 @@ const Input = styled.input.attrs((props) => ({
   cursor: pointer;
   font-family: 'Roboto', sans-serif;
 
-  &[placeholder='E-mail'] {
-    background-image: url(${UserIcon});
-  }
-
-  &[type='password'] {
-    background-image: url(${PasswordIcon});
-  }
-
-  &[placeholder='Gênero'],
-  &[placeholder='Especialidade'],
-  &[placeholder='Convênio'] {
-    background-image: url(${ArrowIcon});
-    background-position: center right 12px;
-  }
-
   &::placeholder {
     color: var(--color-white);
     font-size: 16px;
+  };
+
+  &:focus {
+    outline: var(--color-blue) solid 2px;
   }
 `;
 
-const LabelTags = styled.span`
-  display: inline-block;
-  margin-left: 14px;
-  font-size: 16px;
-  color: var(--color-white);
-  font-weight: 400;
-  font-family: 'Roboto', sans-serif;
-  cursor: pointer;
-`
-
-export { Input, LabelTags };
+export { Input };

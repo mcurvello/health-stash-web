@@ -9,7 +9,7 @@ const InputAge = (props: InputAgeProps) => {
     <div>
       <BaseInput
         width={props.width || "256px"}
-        placeholder="Idade"
+        placeholder="Data de nascimento"
       />
     </div>
   );

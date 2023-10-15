@@ -7,14 +7,6 @@
   justify-content: center;
 }
 
-.create-account-text {
-  color: var(--color-white);
-  font-family: 'Roboto', sans-serif;
-  font-size: 16px;
-  width: 100%;
-  margin-top: 20px;
-}
-
 .create-account-text a {
   display: inline-block;
   margin-left: 10px;

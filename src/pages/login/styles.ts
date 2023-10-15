@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import { Link } from 'react-router-dom';
 
-const CreateAccountText = styled.p`
+const CreateAccountText = styled.div`
   color: var(--color-white);
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
@@ -9,9 +10,10 @@ const CreateAccountText = styled.p`
   margin-top: 20px;
 `;
 
-const SignUpText = styled.a`
+const SignUpText = styled(Link)`
   text-decoration: underline;
   cursor: pointer;
+  color: var(--color-white);
 `
 
 const ContainerSignUpText = styled.div`
