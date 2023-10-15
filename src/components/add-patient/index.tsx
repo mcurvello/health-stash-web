@@ -6,6 +6,7 @@ import BaseButton from '@/components/base-button';
 import InputAllergies from '@/components/input-allergies';
 import InputEmail from '@/components/input-email';
 import InputCommorbidities from '../input-commorbities';
+import InputPassword from '@/components/input-password';
 
 const AddPatient = () => {
   return (
@@ -22,6 +23,7 @@ const AddPatient = () => {
         <InputCommorbidities />
       </Container>
       <InputEmail />
+      <InputPassword />
       <Container align="center" top="30px">
         <BaseButton text='Cadastrar' />
       </Container>

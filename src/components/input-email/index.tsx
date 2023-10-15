@@ -1,13 +1,5 @@
 import BaseInput from "@/components/base-input";
 
-const InputUser = () => {
-  return (
-    <div>
-      <BaseInput
-        placeholder="E-mail"
-      />
-    </div>
-  );
-};
+const InputEmail = () => <BaseInput placeholder="E-mail" full={true} />;
 
-export default InputUser;
+export default InputEmail;

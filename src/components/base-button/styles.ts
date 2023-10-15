@@ -10,7 +10,7 @@ const Button = styled.button`
   background: var(--color-white);
   color: var(--color-blue);
   max-width: 480px;
-  width: 100%;
+  width: 160px;
   font-size: 18px;
   border-radius: 37px;
   padding: 10px 20px;

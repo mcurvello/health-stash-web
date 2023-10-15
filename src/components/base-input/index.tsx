@@ -10,16 +10,14 @@ interface BaseInputTextProps {
 }
 
 const BaseInputText = (props: BaseInputTextProps) => {
-  const isFull = props.full ? '100%' : 'auto';
+  // const isFull = props.full ? '100%' : 'auto';
   
   return (
-    <div style={{ width: isFull }}>
-      <Input
-        placeholder={props.placeholder}
-        width={props.width}
-        type={props.type}
-      />
-    </div>
+    <Input
+      placeholder={props.placeholder}
+      width={props.width}
+      type={props.type}
+    />
   );
 };
 
