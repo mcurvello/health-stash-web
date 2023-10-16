@@ -1,22 +1,30 @@
-import { ChangeEvent, useState } from 'react';
+import { ChangeEvent, useState, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 import BaseButton from '@/components/base-button';
 import InputName from '@/components/input-name';
-import InputAge from '@/components/input-birthdate';
+import InputBirthdate from '@/components/input-birthdate';
 import InputGender from '@/components/input-gender';
 import InputSpeciality from '@/components/input-speciality';
-import InputCommorbidities from '@/components/input-commorbities';
+import InputTel from '@/components/input-tel';
 import InputEmail from '@/components/input-email';
 import InputPassword from '@/components/input-password';
+import { converterDataParaFormatoISO } from '@/utils/date';
+
 import { Container } from '@/components/styles';
-import { createUserWithEmailAndPassword } from 'firebase/auth';
-import { toast, ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { createUser } from '@/services/firebase/create-user';
+import useCreatePhysician from '@/services/api/useCreatePhysician';
+import { ToastContext } from '@/context/toast';
 
 const AddPhysician = () => {
+  const toast = useContext(ToastContext);
+  const { createPhysician } = useCreatePhysician();
+  const navigate = useNavigate();
+
   const [name, setName] = useState('');
-  const [age, setAge] = useState('');
   const [speciality, setSpeciality] = useState('');
-  const [commorbidities, setCommorbidities] = useState('');
+  const [tel, setTel] = useState('');
+  const [birthdate, setBirthdate] = useState('');
+  const [gender, setGender] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -24,16 +32,20 @@ const AddPhysician = () => {
     setName(event.target.value);
   }
 
-  function handleAge(event: ChangeEvent<HTMLInputElement>) {
-    setAge(event.target.value);
+  function handleBirthdate(event: ChangeEvent<HTMLInputElement>) {
+    setBirthdate(event.target.value);
+  }
+
+  function handleGender(event: ChangeEvent<HTMLInputElement>) {
+    setGender(event.target.value);
   }
 
   function handleSpeciality(event: ChangeEvent<HTMLInputElement>) {
     setSpeciality(event.target.value);
   }
 
-  function handleCommorbidites(event: ChangeEvent<HTMLInputElement>) {
-    setCommorbidities(event.target.value);
+  function handleTel(event: ChangeEvent<HTMLInputElement>) {
+    setTel(event.target.value);
   }
 
   function handleEmail(event: ChangeEvent<HTMLInputElement>) {
@@ -46,28 +58,24 @@ const AddPhysician = () => {
   
   async function handleSignUp() {
     try {
-      await createUserWithEmailAndPassword(_, email, password)
-      toast.success('Médico cadastrado com sucesso!', {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: 'colored'
-      });
+      const [firstName, middleName, lastName] = name.split(" ");
+
+      await createUser(email, password)
+      const { id } = await createPhysician({
+        birthDate: converterDataParaFormatoISO(birthdate),
+        firstName,
+        middleName,
+        lastName,
+        gender,
+        tel,
+        speciality,
+      })
+      if (id) {
+        toast?.showToastSuccess('Médico cadastrado com sucesso!');
+        navigate("/");
+      }
     } catch {
-      toast.error('Erro ao cadastrar médico!', {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: 'colored'
-      });
+      toast?.showToastError('Erro ao cadastrar médico!');
     }
   }
 
@@ -75,11 +83,11 @@ const AddPhysician = () => {
     <>
       <InputName onChange={handleName} />
       <Container>
-        <InputAge onChange={handleAge} />
-        <InputGender />
+        <InputBirthdate onChange={handleBirthdate} />
+        <InputGender onChange={handleGender} />
       </Container>
       <InputSpeciality onChange={handleSpeciality} />
-      <InputCommorbidities onChange={handleCommorbidites} />
+      <InputTel onChange={handleTel} />
       <InputEmail onChange={handleEmail} />
       <InputPassword onChange={handlePassword} />
       <Container align="center" top="30px">
