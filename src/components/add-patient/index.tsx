@@ -1,4 +1,5 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
+import { useNavigate } from "react-router-dom";
 import InputName from '@/components/input-name';
 import InputBirthdate from '@/components/input-birthdate';
 import InputGender from '@/components/input-gender';
@@ -8,15 +9,16 @@ import InputAllergies from '@/components/input-allergies';
 import InputEmail from '@/components/input-email';
 import InputCommorbidities from '../input-commorbities';
 import InputPassword from '@/components/input-password';
-import { AuthContext } from '@/context/AuthContext';
 import { converterDataParaFormatoISO } from '@/utils/date';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import useCreatePatient from '@/services/useCreatePatient';
+import { createUser } from '@/services/firebase/create-user';
+import useCreatePatient from '@/services/api/useCreatePatient';
 
 const AddPatient = () => {
-  const auth = useContext(AuthContext);
+
   const { createPatient } = useCreatePatient();
+  const navigate = useNavigate();
 
   const [name, setName] = useState('');
   const [birthdate, setBirthdate] = useState('01/01/1900');
@@ -49,7 +51,7 @@ const AddPatient = () => {
     try {
       const [firstName, middleName, lastName] = name.split(" ");
 
-      await auth?.createUser(email, password);
+      await createUser(email, password);
       await createPatient({
         birthDate: converterDataParaFormatoISO(birthdate),
         firstName,
@@ -57,7 +59,7 @@ const AddPatient = () => {
         lastName,
         gender
       })
-
+      
       toast.success('Paciente cadastrado com sucesso!', {
         position: "top-right",
         autoClose: 5000,

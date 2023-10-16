@@ -1,10 +1,10 @@
-import { useContext, useState } from 'react';
+import { useState } from 'react';
 import Logo from '@/components/logo';
 import InputEmail from '@/components/input-email';
 import InputPassword from '@/components/input-password';
 import BaseButton from '@/components/base-button';
 import { CreateAccountText, SignUpText, ContainerSignUpText, Container } from './styles';
-import { AuthContext } from '@/context/AuthContext';
+import { login } from '@/services/firebase/login'
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -12,12 +12,10 @@ function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const auth = useContext(AuthContext);
-
   const handleLogin = async (event: Event) => {
     event.preventDefault();
     try {
-      await auth?.login(email, password);
+      await login(email, password);
       toast.success('Login feito com sucesso!', {
         position: "top-right",
         autoClose: 5000,

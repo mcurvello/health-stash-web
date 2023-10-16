@@ -9,7 +9,6 @@ import InputEmail from '@/components/input-email';
 import InputPassword from '@/components/input-password';
 import { Container } from '@/components/styles';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
-import { auth } from '@/config/firebase';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -47,7 +46,7 @@ const AddPhysician = () => {
   
   async function handleSignUp() {
     try {
-      await createUserWithEmailAndPassword(auth, email, password)
+      await createUserWithEmailAndPassword(_, email, password)
       toast.success('Médico cadastrado com sucesso!', {
         position: "top-right",
         autoClose: 5000,
