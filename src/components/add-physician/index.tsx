@@ -85,7 +85,6 @@ const AddPhysician = () => {
       <Container align="center" top="30px">
         <BaseButton text='Cadastrar' onClick={handleSignUp} />
       </Container>
-      <ToastContainer />
     </>
   );
 };

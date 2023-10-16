@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { useNavigate } from "react-router-dom";
 import InputName from '@/components/input-name';
 import InputBirthdate from '@/components/input-birthdate';
@@ -10,14 +10,14 @@ import InputEmail from '@/components/input-email';
 import InputCommorbidities from '../input-commorbities';
 import InputPassword from '@/components/input-password';
 import { converterDataParaFormatoISO } from '@/utils/date';
-import { toast, ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 import { createUser } from '@/services/firebase/create-user';
 import useCreatePatient from '@/services/api/useCreatePatient';
+import { ToastContext } from '@/context/toast';
 
 const AddPatient = () => {
 
   const { createPatient } = useCreatePatient();
+  const toast = useContext(ToastContext);
   const navigate = useNavigate();
 
   const [name, setName] = useState('');
@@ -52,35 +52,19 @@ const AddPatient = () => {
       const [firstName, middleName, lastName] = name.split(" ");
 
       await createUser(email, password);
-      await createPatient({
+      const { id } = await createPatient({
         birthDate: converterDataParaFormatoISO(birthdate),
         firstName,
         middleName,
         lastName,
         gender
       })
-      
-      toast.success('Paciente cadastrado com sucesso!', {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: 'colored'
-      });
+      if (id) {
+        toast?.showToastSuccess('Paciente cadastrado com sucesso!');
+        navigate("/");
+      }
     } catch {
-      toast.error('Paciente não foi cadastrado!', {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: 'colored'
-      });
+      toast?.showToastError('Paciente não foi cadastrado!')
     }
   }
 
@@ -102,7 +86,6 @@ const AddPatient = () => {
       <Container align="center" top="30px">
         <BaseButton text='Cadastrar' onClick={handleSignUp} />
       </Container>
-      <ToastContainer />
     </>
   );
 };
