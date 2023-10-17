@@ -1,9 +1,12 @@
-import BaseInput from '@/components/base-input';
+import { InputTelMask } from './styles'
 
 interface InputTelProps {
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-const InputTel = (props: InputTelProps) => <BaseInput placeholder="Telefone" onChange={props.onChange} />
+const InputTel = ({ onChange }: InputTelProps) => {
+
+  return <InputTelMask mask="(__) _____-____" replacement={{ _: /\d/ }} placeholder="Telefone" onChange={onChange} />;
+}
 
 export default InputTel;
