@@ -1,8 +1,7 @@
 import axios, { AxiosInstance } from 'axios';
 
 const axiosInstance: AxiosInstance = axios.create({
-  // baseURL: 'https://healthstash-node-pbwsem4ea-laerciodev.vercel.app',
-  baseURL: 'http://localhost:8080',
+  baseURL: import.meta.env.VITE_API_URL as string,
   headers: {
     'Content-Type': 'application/json',
   },
