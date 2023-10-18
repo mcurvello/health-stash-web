@@ -1,6 +1,16 @@
 # Screenshots
 
+## Tela de login
+
 ![image](https://github.com/laerciodev/health-stash-web/assets/8559900/f81d8ab2-6afe-4cc2-b1ad-9c9ae6a89f3a)
+
+## Tela de cadastro médico
+
+![image](https://github.com/laerciodev/health-stash-web/assets/8559900/67be6054-e97e-437b-b7c0-bdda0a5711be)
+
+## Tela de paciente
+
+![image](https://github.com/laerciodev/health-stash-web/assets/8559900/5fc3bde9-40fb-48a5-af06-a4518ae6869e)
 
 
 # React + TypeScript + Vite
