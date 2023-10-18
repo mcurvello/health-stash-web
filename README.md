@@ -1,6 +1,6 @@
 # Sobre
 
-## Bem-vindo ao Health Stash, um aplicativo web desenvolvido com React que oferece uma solução abrangente para gerenciamento de saúde, integração com o Firebase para autenticação e serviços do FHIR para informações de pacientes e médicos.
+Bem-vindo ao Health Stash, um aplicativo web desenvolvido com React que oferece uma solução abrangente para gerenciamento de saúde, integração com o Firebase para autenticação e serviços do FHIR para informações de pacientes e médicos.
 
 Este projeto foi desenvolvido como parte do FIAP Enterprise Challenge, um desafio acadêmico da FIAP.
 
