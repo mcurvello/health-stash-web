@@ -1,3 +1,8 @@
+# Screenshots
+
+![image](https://github.com/laerciodev/health-stash-web/assets/8559900/f81d8ab2-6afe-4cc2-b1ad-9c9ae6a89f3a)
+
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
