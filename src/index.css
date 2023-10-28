@@ -1,14 +1,13 @@
-:root {
-  --color-white: #fff;
-  --color-blue: #00577C;
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-body {
-  background: linear-gradient(180deg, #224E67 17.19%, #1094CC 75.52%);
-  height: 100vh;
-  width: 100%;
-  overflow-x: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
 }

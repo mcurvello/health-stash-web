@@ -1,48 +1,70 @@
-# Sobre
+# Getting Started with Create React App
 
-Bem-vindo ao Health Stash, um aplicativo web desenvolvido com React que oferece uma solução abrangente para gerenciamento de saúde, integração com o Firebase para autenticação e serviços do FHIR para informações de pacientes e médicos.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Este projeto foi desenvolvido como parte do FIAP Enterprise Challenge, um desafio acadêmico da FIAP.
+## Available Scripts
 
-# Screenshots
+In the project directory, you can run:
 
-## Tela de login
+### `npm start`
 
-![image](https://github.com/laerciodev/health-stash-web/assets/8559900/f81d8ab2-6afe-4cc2-b1ad-9c9ae6a89f3a)
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-## Tela de cadastro médico
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-![image](https://github.com/laerciodev/health-stash-web/assets/8559900/67be6054-e97e-437b-b7c0-bdda0a5711be)
+### `npm test`
 
-## Tela de paciente
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-![image](https://github.com/laerciodev/health-stash-web/assets/8559900/5fc3bde9-40fb-48a5-af06-a4518ae6869e)
+### `npm run build`
 
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-# React + TypeScript + Vite
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-Currently, two official plugins are available:
+### `npm run eject`
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-## Expanding the ESLint configuration
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-- Configure the top-level `parserOptions` property like this:
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+## Learn More
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
